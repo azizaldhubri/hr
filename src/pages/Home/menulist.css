@@ -1,0 +1,14 @@
+
+
+.menulist{
+ background-color: white;
+ width: 300px;
+ height: 86vh;
+ position: absolute;
+ z-index: 1000;
+ top:93px ;
+ left:0 ;
+ 
+ border-radius: 5px;
+
+}
