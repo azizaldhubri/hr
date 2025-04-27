@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.85ecff74.css",
+    "main.js": "/static/js/main.200b9c45.js",
+    "static/media/data-oic.png": "/static/media/data-oic.024e2cd73a87f0877e1d.png",
+    "static/media/تسهيل.png": "/static/media/تسهيل.f8f1e504f7b8fb52594e.png",
+    "static/media/login.png": "/static/media/login.8d114612cc4d57165d8c.png",
+    "static/media/hr7.png": "/static/media/hr7.b0d76ec590f980514198.png",
+    "static/media/rar.jpg": "/static/media/rar.2236f6ea8ae1d5218b88.jpg",
+    "static/media/excel.jpg": "/static/media/excel.359e0e341d011fca9467.jpg",
+    "static/media/المس.png": "/static/media/المس.39ca7357dca873357743.png",
+    "index.html": "/index.html",
+    "main.85ecff74.css.map": "/static/css/main.85ecff74.css.map",
+    "main.200b9c45.js.map": "/static/js/main.200b9c45.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85ecff74.css",
+    "static/js/main.200b9c45.js"
+  ]
+}
