@@ -59,7 +59,7 @@ function App() {
         {/* </Route> */}
         {/* <Route path='/auth/google/callback' element={<GOOGLE_CALL_BACK/>}></Route> */}
         <Route path='/*' element={<Error403/>}></Route>      
-            <Route   element={<ProtectedRoute permission="dashboard" /> } >  
+            // <Route   element={<ProtectedRoute permission="dashboard" /> } >  
                 <Route path='/dashboard' element={<Dashboard />}>
                       {/* <Route path='/dashboard' element={<HomewebSite/>}></Route>               */}
                       <Route path='/dashboard' element={<Home/>}></Route>              
@@ -131,7 +131,7 @@ function App() {
 
              
             </Route>
-            </Route>
+            // </Route>
        
           
           
