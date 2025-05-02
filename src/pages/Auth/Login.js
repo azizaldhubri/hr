@@ -61,10 +61,10 @@ export default function Login(props){
         catch(err){
             console.log(err)
             setLoading(false);
-            if(err.response.status===401){
+            // if(err.response.status===401){
 
-                setErr('Wrong Email Or password ')
-            }else{setErr('Internal Server Error')}
+            //     setErr('Wrong Email Or password ')
+            // }else{setErr('Internal Server Error')}
            
         }
 
