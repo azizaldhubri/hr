@@ -3,6 +3,7 @@ import { Axios } from "../../Api/axios";
 import Table_documents from "../../Component/Dashboard/Table_document";
 import TableShow from "../../Component/Dashboard/Table";
 import { Link } from "react-router-dom";
+import NavHeader from "../../Component/Dashboard/NavHeader";
 
 export default function Payrolls(){
     const [payrolls, setPayrolls] = useState([]);
@@ -75,17 +76,16 @@ export default function Payrolls(){
      ]
   
 
-    
+
+     const links=[
+        {name:' عرض المرتبات ',
+         link:'#'},   
+        ]
+       
 
     return (
         <div className="container">
-            <div className="d-flex gap-5">
-                <h2>عرض المرتبات</h2> 
-                <Link to='/dashboard'>رجوع</Link>
-                
-                {/* <button className="btn btn-primary" onClick={getAllPayrolls}>نحديث رواتب الموظفين</button>     */}
-            </div>
-            
+              <NavHeader nav={links}  />             
              <div className="mt-0   p-2 "style={{ }}>
                               
                 {/* <Table_documents
