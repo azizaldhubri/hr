@@ -84,7 +84,7 @@ export default function Payrolls(){
        
 
     return (
-        <div className="container">
+        <div className="container mt-2">
               <NavHeader nav={links}  />             
              <div className="mt-0   p-2 "style={{ }}>
                               
