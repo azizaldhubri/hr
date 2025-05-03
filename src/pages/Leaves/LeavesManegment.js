@@ -37,7 +37,7 @@ async function handleStatusUpdate(id, status){
         await Axios.post(`leave-requests/${id}/status`,{
             status:status ,
              comments: status === "approved" ? "تمت الموافقة" : "تم الرفض",
-             link_notification:status === "approved" ? '/dashboard/LeaveBalancesTable':'/dashboard/LeavesManegment',
+             link_notification:status === "approved" ? '/dashboard/LeaveBalancesTable':'/dashboard/LeavesRequestsManegment',
         })
         .then(res=>console.log(res.data))
         leaves_Requests();         
