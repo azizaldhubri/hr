@@ -95,9 +95,7 @@ export default function Deductions(){
     return (
         <div className="px-3 py-2 h-100 border border-3"style={{height:'100vh'}}>  
            <NavHeader nav={links}  />
-            // <h3 className="pt-2">إضافة خصم</h3>          
-
-         <div className="    w-100    fs-5 col-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center gap-lg-4 align-items-center justify-content-center  flex-wrap">                                     
+    <div className="    w-100    fs-5 col-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center gap-lg-4 align-items-center justify-content-center  flex-wrap">                                     
             <Form.Group   className="d-flex  col-lg-5 col-md-6 col-sm-11  col-12   p-2 flex-wrap align-items-center justify-content-center  " >
                  <Form.Label  className="  col-6 col-lg-3 col-md-6 col-sm-4 m-0   "   > اختر موظف </Form.Label>
                      <Col lg={9} sm={8} xs={12} md={12} >
