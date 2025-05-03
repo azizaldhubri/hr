@@ -10,8 +10,7 @@ import AddDocument from './pages/Documents/AddDocument';
 import LeavesManegment from './pages/Leaves/LeavesManegment';
 import Homepage from './pages/Home/HomePage';
 import Login from './pages/Auth/Login'; 
-import Error403 from './pages/Auth/403'; 
-import Login1 from './pages/Auth/Login1';  
+import Error403 from './pages/Auth/403';   
 import UserUpdate from './pages/Users/UserUpdate';
 import Role from './pages/Setting/Role';
 import RoleUpdate from './pages/Setting/RoleUpdate';
@@ -52,8 +51,7 @@ function App() {
         <Route path='/' element={<Homepage/>}> </Route>       
          
         {/* <Route element={<RequirBack/>}>    */}
-            <Route path='/login' element={<Login/>}> </Route>
-            <Route path='/login1' element={<Login1/>}> </Route>          
+            <Route path='/login' element={<Login/>}> </Route>                   
             <Route path='/Register' element={<Register/>}> </Route>
           
         {/* </Route> */}
