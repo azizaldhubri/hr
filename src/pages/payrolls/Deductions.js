@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
- 
+import { useEffect, useState } from "react"; 
 import { Form , Col } from "react-bootstrap"; 
 import Select from 'react-select';
 import HistoryDate from "../../Component/Dashboard/History";
 import { Axios } from "../../Api/axios";
+import NavHeader from "../../Component/Dashboard/NavHeader";
+
 export default function Deductions(){ 
     const [employees, setEmployees] = useState([]);
     const [employeeId, setEmployeeId] = useState("");
@@ -24,7 +25,7 @@ export default function Deductions(){
     const fetchEmployees = async () => {
         try{ 
         const response = await Axios.get("users");
-        setEmployees(response.data.data);
+        setEmployees(response.data.data.data);
         }
         catch(err){console.log(err)}
     };
@@ -87,10 +88,14 @@ export default function Deductions(){
           overflowY: 'auto',  // تفعيل التمرير إذا تجاوزت القائمة الحد الأقصى
         }),         
       };
-
+ const links=[
+            {name:'إضافة خصم',
+             link:'#'},    
+          ]
     return (
-        <div className="px-3 py-2 h-100 border border-3"style={{height:'100vh'}}>     
-            <h3 className="pt-2">إضافة خصم</h3>          
+        <div className="px-3 py-2 h-100 border border-3"style={{height:'100vh'}}>  
+           <NavHeader nav={links}  />
+            // <h3 className="pt-2">إضافة خصم</h3>          
 
          <div className="    w-100    fs-5 col-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center gap-lg-4 align-items-center justify-content-center  flex-wrap">                                     
             <Form.Group   className="d-flex  col-lg-5 col-md-6 col-sm-11  col-12   p-2 flex-wrap align-items-center justify-content-center  " >
