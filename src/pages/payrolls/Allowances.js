@@ -4,6 +4,7 @@ import { Form , Col } from "react-bootstrap";
 import Select from 'react-select';
 import HistoryDate from "../../Component/Dashboard/History";
 import '../../Css/components/select.css' ;
+import NavHeader from "../../Component/Dashboard/NavHeader";
  
 export default function Allowances(){   
     const [employees, setEmployees] = useState([]);
@@ -23,7 +24,7 @@ export default function Allowances(){
     const fetchEmployees = async () => {
         try{ 
         const response = await Axios.get("users");
-        setEmployees(response.data.data);
+        setEmployees(response.data.data.data);
         }
         catch(err){console.log(err)}
     };
@@ -76,11 +77,16 @@ export default function Allowances(){
       const handleChange = (selected) => {
         setEmployeeId(selected.value); // تحديث الحالة بالقيمة المحددة
       };
-  
+   const links=[
+        {name:'الحوافز',
+         link:'#'
+        },        
+      ]
 
     return (
-        <div className=" ">
-            <h2>إدارة المرتبات</h2>       
+        <div className="mt-2 ">
+            // <h2>إدارة المرتبات</h2>  
+      <NavHeader nav={links}  /> 
         
             <div className="    w-100    fs-5 col-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center gap-lg-4 align-items-center justify-content-center  flex-wrap">                                     
             <Form.Group   className="d-flex  col-lg-5 col-md-6 col-sm-11  col-12   p-2 flex-wrap align-items-center justify-content-center  " >
