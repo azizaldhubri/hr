@@ -253,7 +253,8 @@ return(
        >
       <Table aria-label="simple table"
       sx={{
-         width:'100%'
+         width:'100%',
+       marginTop:0 ,
       }}>
         
     <TableHead className="border primary ">
