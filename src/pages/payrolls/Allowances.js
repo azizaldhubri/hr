@@ -84,10 +84,8 @@ export default function Allowances(){
       ]
 
     return (
-        <div className="mt-2 ">
-            // <h2>إدارة المرتبات</h2>  
-      <NavHeader nav={links}  /> 
-        
+        <div className="mt-2 ">            
+      <NavHeader nav={links}  />         
             <div className="    w-100    fs-5 col-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center gap-lg-4 align-items-center justify-content-center  flex-wrap">                                     
             <Form.Group   className="d-flex  col-lg-5 col-md-6 col-sm-11  col-12   p-2 flex-wrap align-items-center justify-content-center  " >
                  <Form.Label  className="  col-6 col-lg-3 col-md-6 col-sm-4 m-0   "   > اختر موظف </Form.Label>
