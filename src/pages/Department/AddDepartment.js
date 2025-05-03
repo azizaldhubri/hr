@@ -26,8 +26,8 @@ export default function AddDepartment(){
   useEffect(()=>{
     async function getUser(){
       try{ await Axios.get(`${USERS}`)
-        .then(res =>{setUsers(res.data.data);
-          console.log(res.data.data)
+        .then(res =>{setUsers(res.data.data.data);
+          // console.log(res.data.data.data)
         })
        }
       catch(err){
