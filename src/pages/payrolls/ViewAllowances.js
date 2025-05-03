@@ -5,6 +5,7 @@ import Table_documents from "../../Component/Dashboard/Table_document";
 import { Form , Col } from "react-bootstrap"; 
 import Select from 'react-select';
 import HistoryDate from "../../Component/Dashboard/History";
+import NavHeader from "../../Component/Dashboard/NavHeader";
 
 export default function ViewAllowances(){      
  
@@ -27,7 +28,7 @@ export default function ViewAllowances(){
         const fetchEmployees = async () => {
             try{ 
             const response = await Axios.get("users");
-            setEmployees(response.data.data);
+            setEmployees(response.data.data.data);
             }
             catch(err){console.log(err)}
         };
@@ -106,12 +107,14 @@ export default function ViewAllowances(){
         }      
         catch(err){console.log(err)  }
     };
-    return (
-      
-        <div className="container">
-             
-    
-            <h3>📋 العمليات المالية (الحوافز)</h3>   
+  const links=[
+      {name:'العمليات المالية (الحوافز)',
+       link:'#'}, ]
+ 
+    return (      
+        <div className="container mt-2">
+          <NavHeader nav={links}  />    
+            // <h3>📋 العمليات المالية (الحوافز)</h3>   
           <div className="    w-100    fs-5 col-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center gap-lg-4 align-items-center justify-content-center  flex-wrap">                                     
             <Form.Group   className="d-flex  col-lg-5 col-md-6 col-sm-11  col-12   p-2 flex-wrap align-items-center justify-content-center  " >
                  <Form.Label  className="  col-6 col-lg-3 col-md-6 col-sm-4 m-0   "   > اختر موظف </Form.Label>
