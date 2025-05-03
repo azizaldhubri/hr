@@ -9,6 +9,7 @@ import Cookie from 'cookie-universal' ;
 // import Form from 'react-bootstrap/Form'; 
 import { baseUrl, LOGIN } from "../../Api/Api";
 import { WindowSize } from "../../Component/Context/WindowContext";
+import LoadingSubmit from "../../Component/Loading/Loading";
 export default function Login(props){
     // const size=useContext(WindowSize) ;
     //   const windowSize=size.windowSize ;   
@@ -70,6 +71,8 @@ export default function Login(props){
 
     }
     return(
+          <>
+       {loading && <LoadingSubmit/>} 
         <div className="  w-100  d-flex align-items-center justify-content-center h-100 bg-light  "style={{height:'82vh',zIndex:23, position:'relative'}}>
             <div className="   d-flex align-items-center justify-content-center  w-100">
              {windowsize > 550 && <img src={require('../../img/login.png')} className="rounded w-100 h-100" 
@@ -119,5 +122,6 @@ export default function Login(props){
 
             </div>
         </div>
+     </>
     )
 }
