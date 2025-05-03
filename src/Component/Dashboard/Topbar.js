@@ -113,7 +113,7 @@ async function Notification_isread(id){
                   <div  className='        gap-3 align-items-start rounded   '   >
                   {notifications && 
                   notifications.map((item,i)=>
-                  <div key={i} className='  border-bottom  mt-1 '
+                  <div key={i} className='  border-bottom  mt-1    d-flex align-items-center justify-content-center'
                   onClick={()=>Notification_isread(item.id)}
 
                   style={{
