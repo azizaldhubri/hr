@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Axios } from "../../Api/axios";
-import Table_documents from "../../Component/Dashboard/Table_document";
- 
+import Table_documents from "../../Component/Dashboard/Table_document"; 
 import { Form , Col } from "react-bootstrap"; 
 import Select from 'react-select';
 import HistoryDate from "../../Component/Dashboard/History";
+import NavHeader from "../../Component/Dashboard/NavHeader";
 
 export default function ViewDeduction(){      
  
@@ -24,7 +24,7 @@ export default function ViewDeduction(){
         const fetchEmployees = async () => {
             try{ 
             const response = await Axios.get("users");
-            setEmployees(response.data.data);
+            setEmployees(response.data.data.data);
             }
             catch(err){console.log(err)}
         };
@@ -117,9 +117,14 @@ export default function ViewDeduction(){
         }      
         catch(err){console.log(err)  }
     };
+
+  const links=[
+      {name:'عرض الخصومات',
+       link:'#'}, ]
     return (
       
-        <div className="container">
+        <div className="container mt-2">
+      <NavHeader nav={links}  /> 
              
     
             <h3>📋 العمليات المالية (البدلات والخصومات)</h3>   
