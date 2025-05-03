@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Axios } from "../../Api/axios";
-import Table_documents from "../../Component/Dashboard/Table_document";
- 
+import Table_documents from "../../Component/Dashboard/Table_document"; 
 import { Form , Col } from "react-bootstrap"; 
 import Select from 'react-select';
 import HistoryDate from "../../Component/Dashboard/History";
@@ -9,15 +8,9 @@ import NavHeader from "../../Component/Dashboard/NavHeader";
 
 export default function ViewAllowances(){      
  
-            const[page,setPage]=useState(1)
-            const[limit,setLimit]=useState(3)   
+     const[page,setPage]=useState(1)
+     const[limit,setLimit]=useState(3)   
     const [data, setData] = useState([]);
- 
-    
-  
-    
-
-    //-=========================
     const [employees, setEmployees] = useState([]);
     const [employeeId, setEmployeeId] = useState("");
     
