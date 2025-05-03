@@ -67,7 +67,10 @@ color:'white',
                             ))
                         ) : (
                             <TableRow>
-                                <TableCell colSpan="6">لا توجد بيانات أرصدة إجازات.</TableCell>
+                                  {     leaveBalances ?
+                                <TableCell colSpan="6">Loading ...</TableCell>
+                               : <TableCell colSpan="6">لا توجد بيانات أرصدة إجازات.</TableCell>
+                             }
                             </TableRow>
                         )}
                     </TableBody>
