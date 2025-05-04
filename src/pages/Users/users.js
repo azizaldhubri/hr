@@ -106,7 +106,7 @@ export default function Users(){
         style={{}}>
                <NavHeader nav={links}  /> 
             
-            <div className="w-25 d-flex justify-content-between fs-4  me-3">                 
+            <div className="w-50 d-flex justify-content-between fs-4  me-3">                 
                 <Link to='/dashboard/adduser' className="text-danger">إضافة موظف +</Link>
             </div>             
             <div className="mt-0   p-2 "style={{ }}>
