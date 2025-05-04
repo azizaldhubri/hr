@@ -3,7 +3,7 @@ import Select from 'react-select';
 import HistoryDate from "../../Component/Dashboard/History";
 import { useEffect, useRef, useState } from "react"; 
 import 'moment/locale/ar';
-import { Link } from "react-router-dom"; 
+import { Link , useNavigate } from "react-router-dom"; 
 import { typeFile } from "../../Helpers/Files";
 import { Axios } from "../../Api/axios";
 import { USERS } from "../../Api/Api";
@@ -11,6 +11,7 @@ import { USERS } from "../../Api/Api";
  
 
 export default function AddUser(){  
+ const navigate=useNavigate('')
   const[filesdata,setFilesdata]=useState([]); 
   const[confirmPassword,setConfirmPassword]=useState('');
   const[message,setMessage]=useState('');
@@ -26,6 +27,7 @@ export default function AddUser(){
     job_title:'',
     gender:'ذكر', 
     nationality:'', 
+    department_id:'', 
     // departments:'', 
     role:'user',       
     role_id:'2',         
@@ -56,9 +58,7 @@ export default function AddUser(){
     label: item.department_name 
   }));
  
-  const handleChangeDept = (selected) => {
-    setDepartment_Id(selected.value); // تحديث الحالة بالقيمة المحددة
-  };
+ 
   
  //////////////////////////////   getRoles---------
   async function getRoles(){
@@ -170,7 +170,7 @@ async function handleSubmit(e){
     formData.append('job_title', form.job_title);
     formData.append('gender', form.gender);
     formData.append('nationality', form.nationality.value);    
-    formData.append('department_id', department_id);    
+    formData.append('department_id', form.department_id.value);    
     formData.append('role', form.role.label );
     formData.append('role_id', form.role.value );   
     formData.append('employment_type', form.employment_type );
@@ -179,8 +179,8 @@ async function handleSubmit(e){
     formData.append('files[]', filesdata[0])
     try{                       
       // console.log(...formData)   
-       await Axios.post(`${USERS}/add`,formData )  ;    
-     window.location.pathname='/dashboard/users'
+       await Axios.post(`${USERS}/add`,formData )  ; 
+      navigate('/dashboard/users')   
        
     }
     catch(err){       
@@ -335,14 +335,13 @@ async function handleSubmit(e){
                             <Select className='w-100   '
                                 name='department_id'                                 
                                 options={department}                                                           
-                                placeholder="اختر القسم "                                               
-                                value={department_id !=null ? department_id.label  :'اختر موظف '}                                               
-                                onChange={handleChangeDept}
+                                placeholder="اختر القسم "  
+                                onChange={(e)=> setForm({...form,department_id:e })}                                
                                 styles={customStyles}
                               required
                            >                            
                   </Select> 
-                  {(message.length> 0 && form.departments==='')&&
+                  {(message.length> 0 && form.department_id==='')&&
                             <p className="text-danger m-0" style={{fontSize:'13px'}}>Required</p>                            
                             }
                             </Col>
