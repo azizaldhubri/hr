@@ -118,7 +118,7 @@ export default function AddDocument(){
         try{
             Axios.get(`${USERS}`)
             .then(res=>{
-                setUsers(res.data.data)  })
+                setUsers(res.data.data.data)  })
 
         }
         catch(err){console.log(err)}
