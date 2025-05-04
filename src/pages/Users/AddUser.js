@@ -7,10 +7,14 @@ import { Link , useNavigate } from "react-router-dom";
 import { typeFile } from "../../Helpers/Files";
 import { Axios } from "../../Api/axios";
 import { USERS } from "../../Api/Api";
+import { Menu } from "../../Component/Context/MenuContext";
  
  
 
-export default function AddUser(){  
+export default function AddUser(){ 
+  const menu=useContext(Menu)    
+  let setIsupdated=menu.setIsupdateNotifaction ;
+ 
  const navigate=useNavigate('')
   const[filesdata,setFilesdata]=useState([]); 
   const[confirmPassword,setConfirmPassword]=useState('');
@@ -140,7 +144,10 @@ export default function AddUser(){
    
  
   
-  
+//---update Notifaction
+ function handelUpateNotifaction(){        
+  setIsupdated((perv)=>!perv) ;  
+}
 
 function handlechangefile(e){
   // setFilesdata((prev)=>[...prev,...e.target.files]); 
@@ -180,7 +187,8 @@ async function handleSubmit(e){
     try{                       
       // console.log(...formData)   
        await Axios.post(`${USERS}/add`,formData )  ; 
-      navigate('/dashboard/users')   
+      handelUpateNotifaction(); 
+      navigate('/dashboard/users')  ; 
        
     }
     catch(err){       
