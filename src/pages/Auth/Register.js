@@ -8,10 +8,9 @@ import 'moment/locale/ar';
 import { baseUrl, REGISTER } from "../../Api/Api";
  
  import Cookie from 'cookie-universal' ;
- import LoadingSubmit from "../../Component/Loading/Loading";
-    
-   
-   export default function Register(props){  
+ import LoadingSubmit from "../../Component/Loading/Loading";   
+  
+   export default function Register(props){
 
         const cookie=Cookie();     
          const[loading,setLoading]=useState(false);   
