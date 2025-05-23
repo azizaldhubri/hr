@@ -11,7 +11,7 @@ import { baseUrl, REGISTER } from "../../Api/Api";
  import LoadingSubmit from "../../Component/Loading/Loading";
     
    
-   export default function Register(){  
+   export default function Register(props){  
 
         const cookie=Cookie();     
          const[loading,setLoading]=useState(false);   
@@ -413,6 +413,11 @@ import { baseUrl, REGISTER } from "../../Api/Api";
    
                  <div className="w-100 border text-center gap-4">
                    <button className="btn btn-primary m-3" onClick={handleSubmit}>حفظ</button>
+  <button className="text-center rounded btn btn-primary mt-3  "
+                            style={{background:'rgb(3, 35, 77)' }}
+                              onClick={props.login} 
+                            > login                               
+                                </button>
                    {/* <button className="btn btn-primary">إلغاء</button> */}
                  </div>
                     
